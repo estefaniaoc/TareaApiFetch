@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('https://reqres.in/api/users?delay=3')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
             loader.classList.add('d-none');
             userTable.classList.remove('d-none');
             data.data.forEach(user => {
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         })
         .catch(error => {
-            console.error('Error fetching data:', error);
-            loader.innerHTML = '<p>Error al cargar datos</p>';
+            console.error('Error :', error);
+            loader.innerHTML = '<p>Error al cargar.</p>';
         });
 });
